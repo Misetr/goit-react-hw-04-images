@@ -27,7 +27,7 @@ export const App = () => {
       const fetchArr = fetch.hits;
       fetch.hits.length ? setIsEmpty(false) : setIsEmpty(true);
       setDataArr(prev => [...prev, ...fetchArr]);
-      setMaxPages(Math.floor(fetch.totalHits / per_page));
+      setMaxPages(Math.ceil(fetch.totalHits / per_page));
     } catch (error) {
       console.log(error.massage);
     } finally {
